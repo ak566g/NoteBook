@@ -30,12 +30,12 @@ public class SaveNoteServelet extends HttpServlet {
 			// fetching content and title.
 			String title = request.getParameter("notestitle");
 			String content = request.getParameter("content");
-			
+
 			Note note = new Note(title, content, new Date());
-//			System.out.println(note.getId()+" : " + note.getTitle());
-//			hibernate:save()
+			//			System.out.println(note.getId()+" : " + note.getTitle());
+			//			hibernate:save()
 			Session s= FactoryProvider.getFactory().openSession();
-			
+
 			Transaction tx = s.beginTransaction();
 			s.save(note);
 			tx.commit();
@@ -44,7 +44,7 @@ public class SaveNoteServelet extends HttpServlet {
 			PrintWriter out = response.getWriter();
 			out.println("<h1 style = 'text-align:center;'>Note is added successfully</h1>");
 			out.println("<h1 style = 'text-align:center;'><a href='all_notes.jsp'> View All Notes </a></h1>");
-			
+
 		}
 		catch(Exception e)
 		{

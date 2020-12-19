@@ -9,27 +9,27 @@
 <%@include file="all_js_css.jsp"%>
 <body>
 
-	<div class="container-fluid p-0 m-0">
+	<div class="container my-1">
 		<%@include file="navbar.jsp"%>
-		
-			<!--  This is add notes area -->
 
-	<form action="SaveNoteServelet" method="post">
-		<div class="form-group">
-			<label for="notestitle">Note Title</label> <input required
-				name="notestitle" type="text" class="form-control" id="notestitle"
-				aria-describedby="notes" placeholder="Enter Notes Title" />
-		</div>
-		<div class="form-group">
-			<label for="content">Note</label>
-			<textarea name="content" required id="content"
-				placeholder="Enter Your Content Here" class="form-control"
-				style="height: 300px"></textarea>
-		</div>
-		<div class="container text-center">
-			<button type="submit" class="btn btn-primary">Add</button>
-		</div>
-	</form>
+		<!--  This is add notes area -->
+
+		<form action="SaveNoteServelet" method="post">
+			<div class="form-group">
+				<label for="notestitle">Note Title</label> <input required
+					name="notestitle" type="text" class="form-control" id="notestitle"
+					aria-describedby="notes" placeholder="Enter Notes Title" />
+			</div>
+			<div class="form-group">
+				<label for="content">Note</label>
+				<textarea name="content" required id="content"
+					placeholder="Enter Your Content Here" class="form-control"
+					style="height: 300px"></textarea>
+			</div>
+			<div class="container text-center">
+				<button type="submit" class="btn btn-primary">Add</button>
+			</div>
+		</form>
 	</div>
 
 

@@ -2,7 +2,7 @@
 <%@include file="all_js_css.jsp"%>
 <body>
 
-	<div class="container-fluid p-0 m-0">
+	<div class="container my-1">
 		<%@include file="navbar.jsp"%>
 	</div>
 

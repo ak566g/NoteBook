@@ -15,43 +15,47 @@
 <%@include file="all_js_css.jsp"%>
 <body>
 
-	<div class="container-fluid p-0 m-0">
+	<div class="container my-1">
 		<%@include file="navbar.jsp"%>
 		<br>
-		<h1 class = "text-uppercase">All Notes:</h1>
-		
+		<h1 class="text-uppercase">All Notes:</h1>
+
 		<div class="row">
-		<div class = "col-12">
-		<%
-		Session s = FactoryProvider.getFactory().openSession();
-		Query q = s.createQuery("from Note");
-		List<Note> list = q.list();
-		
-		for(Note note : list)
-		{ %>
-			
-			<div class="card mt-3">
-			  <img class="card-img-top p-4 mx-auto" style="max-width:100px;" src="img\notes.png" alt="Card image cap">
-			  <div class="card-body p-5">
-			    <h5 class="card-title"><%= note.getTitle() %></h5>
-			    <p class="card-text"><%= note.getContent() %></p>
-			    <div class="container text-center">
-			    <a href="edit.jsp?note_id=<%=note.getId()%>" class="btn btn-primary">Update</a>
-			    <a href="DeleteServelet?note_id=<%=note.getId()%>" class="btn btn-danger">Delete</a>
-			    </div>
-			  </div>
+			<div class="col-12">
+				<%
+					Session s = FactoryProvider.getFactory().openSession();
+				Query q = s.createQuery("from Note");
+				List<Note> list = q.list();
+
+				for (Note note : list) {
+				%>
+
+				<div class="card mt-3">
+					<img class="card-img-top p-4 mx-auto" style="max-width: 100px;"
+						src="img\notes.png" alt="Card image cap">
+					<div class="card-body p-5">
+						<h5 class="card-title"><%=note.getTitle()%></h5>
+						<p class="card-text"><%=note.getContent()%></p>
+						<div class="container text-center">
+							<a href="edit.jsp?note_id=<%=note.getId()%>"
+								class="btn btn-primary">Update</a> <a
+								href="DeleteServelet?note_id=<%=note.getId()%>"
+								class="btn btn-danger">Delete</a>
+						</div>
+					</div>
+				</div>
+
+				<%
+					}
+				s.close();
+				%>
 			</div>
-						
-		<%}
-		s.close();
-		%>
 		</div>
-		</div>
-		
-		
+
+
 	</div>
-	
-	
+
+
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
