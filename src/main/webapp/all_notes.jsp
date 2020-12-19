@@ -31,7 +31,7 @@
 		{ %>
 			
 			<div class="card mt-3">
-			  <img class="card-img-top" src="..." alt="Card image cap">
+			  <img class="card-img-top p-4" style="max-width:100px;" src="img\notes.png" alt="Card image cap">
 			  <div class="card-body">
 			    <h5 class="card-title"><%= note.getTitle() %></h5>
 			    <p class="card-text"><%= note.getContent() %></p>
