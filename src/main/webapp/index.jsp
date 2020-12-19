@@ -4,6 +4,17 @@
 
 	<div class="container my-1">
 		<%@include file="navbar.jsp"%>
+
+		<div class="card p-4 my-4">
+			<div class="container-fluid text-center">
+			<img class="card-img-top" src="img/notes.png" style="max-width:50vh;" alt="Card image cap">
+			</div>
+			<div class="card-body text-center">
+				<h5 class="card-title">Save Your Notes</h5>
+				<p class="card-text">Start Here</p>
+				<a href="add_notes.jsp" class="btn btn-primary">Add Notes</a>
+			</div>
+		</div>
 	</div>
 
 

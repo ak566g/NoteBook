@@ -18,7 +18,8 @@
 	<div class="container my-1">
 		<%@include file="navbar.jsp"%>
 		<br>
-		<h1 class="text-uppercase">All Notes:</h1>
+		<h1 class="text-uppercase">All Notes</h1>
+		<hr>
 
 		<div class="row">
 			<div class="col-12">
