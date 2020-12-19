@@ -1,6 +1,8 @@
 package com.servelets;
 
 import java.io.IOException;
+import java.util.Date;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -13,31 +15,35 @@ import com.ankita.Note;
 import com.helper.FactoryProvider;
 
 /**
- * Servlet implementation class DeleteServelet
+ * Servlet implementation class UpdateServelet
  */
-public class DeleteServelet extends HttpServlet {
+public class UpdateServelet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    
-    public DeleteServelet() {
-        super();
-        
-    }
-
 	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public UpdateServelet() {
+        super();
+    }
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
-			int noteId = Integer.parseInt(request.getParameter("note_id").trim());
+			String title = request.getParameter("notestitle");
+			String content = request.getParameter("content");
+			int noteId = Integer.parseInt(request.getParameter("noteId").trim());
 			Session s = FactoryProvider.getFactory().openSession();
-			Note note = s.get(Note.class, noteId);
 			Transaction tx = s.beginTransaction();
-			s.delete(note);
+			
+			Note note = s.get(Note.class, noteId);
+			
+			note.setTitle(title);
+			note.setContent(content);
+			note.setAddedDate(new Date());
 			tx.commit();
 			s.close();
+			
 			response.sendRedirect("all_notes.jsp");
-		} catch(Exception e)
+		}catch(Exception e)
 		{
 			
 		}
 	}
+
 }

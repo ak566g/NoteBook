@@ -24,6 +24,7 @@
 		%>
 		
 		<form action="UpdateServelet" method="post">
+		<input value="<%= note.getId()%>" name="noteId"  type="hidden">
 		<div class="form-group">
 			<label for="notestitle">Note Title</label> <input required
 				name="notestitle" type="text" class="form-control" id="notestitle"
