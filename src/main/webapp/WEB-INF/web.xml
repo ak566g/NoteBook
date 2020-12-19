@@ -10,8 +10,18 @@
 		<description></description>
 		<servlet-class>com.servelets.SaveNoteServelet</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>DeleteServelet</servlet-name>
+		<display-name>DeleteServelet</display-name>
+		<description></description>
+		<servlet-class>com.servelets.DeleteServelet</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>SaveNoteServelet</servlet-name>
 		<url-pattern>/SaveNoteServelet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DeleteServelet</servlet-name>
+		<url-pattern>/DeleteServelet</url-pattern>
 	</servlet-mapping>
 </web-app>
