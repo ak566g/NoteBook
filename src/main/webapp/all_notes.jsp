@@ -1,3 +1,9 @@
+
+<%@page import="org.hibernate.Query"%>
+<%@page import="com.ankita.*"%>
+<%@page import="java.util.List"%>
+<%@page import="com.helper.FactoryProvider"%>
+<%@page import="org.hibernate.Session"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -11,8 +17,38 @@
 
 	<div class="container-fluid p-0 m-0">
 		<%@include file="navbar.jsp"%>
+		<br>
+		<h1 class = "text-uppercase">All Notes:</h1>
+		
+		<div class="row">
+		<div class = "col-12">
+		<%
+		Session s = FactoryProvider.getFactory().openSession();
+		Query q = s.createQuery("from Note");
+		List<Note> list = q.list();
+		
+		for(Note note : list)
+		{ %>
+			
+			<div class="card mt-3">
+			  <img class="card-img-top" src="..." alt="Card image cap">
+			  <div class="card-body">
+			    <h5 class="card-title"><%= note.getTitle() %></h5>
+			    <p class="card-text"><%= note.getContent() %></p>
+			    <a href="#" class="btn btn-danger">Delete</a>
+			  </div>
+			</div>
+						
+		<%}
+		s.close();
+		%>
+		</div>
+		</div>
+		
+		
 	</div>
-
+	
+	
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

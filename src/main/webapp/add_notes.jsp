@@ -11,11 +11,8 @@
 
 	<div class="container-fluid p-0 m-0">
 		<%@include file="navbar.jsp"%>
-	</div>
-
-
-
-	<!--  This is add notes area -->
+		
+			<!--  This is add notes area -->
 
 	<form action="SaveNoteServelet" method="post">
 		<div class="form-group">
@@ -33,6 +30,11 @@
 			<button type="submit" class="btn btn-primary">Add</button>
 		</div>
 	</form>
+	</div>
+
+
+
+
 
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
